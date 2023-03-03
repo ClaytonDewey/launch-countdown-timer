@@ -6,12 +6,36 @@ type FooterProps = {};
 
 const StyledFooter = styled.footer`
   text-align: center;
+
+  .social-icons {
+    margin-bottom: 4rem;
+
+    a {
+      &:not(:last-child) {
+        margin-right: 3rem;
+      }
+      svg {
+        transition: fill 0.25s ease-in-out;
+        fill: var(--dark-blue);
+      }
+
+      &:hover {
+        svg {
+          transition: fill 0.25s ease-in-out;
+          fill: var(--primary-red);
+        }
+      }
+    }
+  }
   .attribution {
     font-size: 11px;
     text-align: center;
   }
   .attribution a {
     color: hsl(228, 45%, 44%);
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 `;
 
@@ -19,9 +43,15 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <StyledFooter>
       <div className='social-icons'>
-        <IconFacebook />
-        <IconPinterest />
-        <IconInstagram />
+        <a href='https://www.facebook.com/' rel='noreferrer' target='_blank'>
+          <IconFacebook />
+        </a>
+        <a href='https://www.pinterest.com/' rel='noreferrer' target='_blank'>
+          <IconPinterest />
+        </a>
+        <a href='https://www.instagram.com/' rel='noreferrer' target='_blank'>
+          <IconInstagram />
+        </a>
       </div>
       <div className='attribution'>
         Challenge by{' '}
