@@ -16,6 +16,7 @@ const StyledContainer = styled.main`
   h1 {
     text-align: center;
     text-transform: uppercase;
+    font-size: 2rem;
     letter-spacing: 5px;
     margin-bottom: 10rem;
   }
