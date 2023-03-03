@@ -62,7 +62,13 @@ const Counter: React.FC<CounterProps> = () => {
     <StyledDiv>
       {Object.keys(timeLeft).map((keyName, i) => {
         // console.log(typeof timeLeft[keyName]);
-        return <Count key={i} type={keyName} count={timeLeft[keyName]} />;
+        return (
+          <Count
+            key={i}
+            type={keyName}
+            count={timeLeft[keyName as keyof TimeLeft]}
+          />
+        );
       })}
     </StyledDiv>
   );
