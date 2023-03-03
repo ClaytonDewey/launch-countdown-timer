@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type CountProps = {};
+type CountProps = {
+  type: string;
+  count: number;
+};
 
 const StyledCard = styled.span`
   display: inline-block;
@@ -22,6 +25,8 @@ const StyledCard = styled.span`
     font-size: 9vw;
     line-height: 0.95;
     margin-bottom: 2rem;
+    border-radius: 0.15em;
+    box-shadow: 0 1.5rem var(--extra-dark-blue);
   }
 
   .card__top,
@@ -121,17 +126,17 @@ const StyledCard = styled.span`
   }
 `;
 
-const Count: React.FC<CountProps> = () => {
+const Count: React.FC<CountProps> = ({ type, count }) => {
   return (
     <StyledCard className='flip-clock__piece flip'>
       <b className='flip-clock__card card'>
-        <b className='card__top'>11</b>
-        <b className='card__bottom' data-value='12'></b>
-        <b className='card__back' data-value='12'>
-          <b className='card__bottom' data-value='11'></b>
+        <b className='card__top'>{count}</b>
+        <b className='card__bottom' data-value={count}></b>
+        <b className='card__back' data-value={count}>
+          <b className='card__bottom' data-value={count}></b>
         </b>
       </b>
-      <span className='flip-clock__slot'>Days</span>
+      <span className='flip-clock__slot'>{type}</span>
     </StyledCard>
   );
 };
