@@ -5,6 +5,7 @@ import { IconFacebook, IconInstagram, IconPinterest } from './Icons';
 type FooterProps = {};
 
 const StyledFooter = styled.footer`
+  text-align: center;
   .attribution {
     font-size: 11px;
     text-align: center;
@@ -25,7 +26,7 @@ const Footer: React.FC<FooterProps> = () => {
       <div className='attribution'>
         Challenge by{' '}
         <a
-          href='https://www.frontendmentor.io?ref=challenge'
+          href='hhttps://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-'
           rel='noreferrer'
           target='_blank'>
           Frontend Mentor
